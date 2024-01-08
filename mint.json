@@ -50,8 +50,9 @@
   "navigation": [
     {
       "group": "Get Started",
-      "pages": ["introduction", "scanning", "template"]
-    }
+      "pages": ["introduction"]
+    },
+    { "group": "Vulnerability Assessment", "pages": ["scanning", "template"] }
   ],
   "footerSocials": {
     "twitter": "https://twitter.com/attaxapty",
