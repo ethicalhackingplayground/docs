@@ -52,7 +52,10 @@
       "group": "Get Started",
       "pages": ["introduction"]
     },
-    { "group": "Vulnerability Assessment", "pages": ["scanning", "template"] }
+    {
+      "group": "Security Testing",
+      "pages": ["vulnerability scanning", "template syntax"]
+    }
   ],
   "footerSocials": {
     "twitter": "https://twitter.com/attaxapty",
