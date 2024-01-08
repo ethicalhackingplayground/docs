@@ -1,0 +1,150 @@
+---
+title: Scanning
+description: "Learn how to run your first scan"
+---
+
+<img
+  className="block dark:hidden"
+  src="/images/scan-page-light.png"
+  alt="Scan Page Light"
+/>
+<img
+  className="hidden dark:block"
+  src="/images/scan-page-dark.png"
+  alt="Scan Page Dark"
+/>
+
+## Scan modes
+
+
+**There are 4 scan modes right now:**
+
+- Single URL
+- Root Domain
+- Directory Bruteforce
+- Template Scan
+
+<Note>We are currently planning to add more scan modes down the track</Note>
+
+## Tools used
+
+ **Here's a detailed explanation of each component's role in an AEM attack surface management platform:**
+
+**1. Web Crawler or Spider:**
+
+- **Function:** Systematically explores and maps all online assets connected to your AEM environment.
+- **Process:**
+    - Starts with known entry points (main AEM site URL).
+    - Follows links to discover deeper sections, including internal, external, and API-related links.
+    - Employs techniques like parameter fuzzing and sitemap analysis to uncover hidden pages.
+    - Builds a map of the entire AEM attack surface with details like page content, server responses, and potential vulnerabilities.
+
+**2. AEM Detector:**
+
+- **Function:** Identifies whether discovered assets are running AEM and their specific versions.
+- **Process:**
+    - Analyzes HTML content, server headers, and JavaScript files for AEM-specific patterns.
+    - Sends crafted requests to trigger characteristic AEM responses.
+    - Uses known version-specific fingerprints to determine the exact AEM version in use.
+
+**3. HTTP Prober:**
+
+- **Function:** Tests discovered assets for vulnerabilities or misconfigurations by sending various HTTP requests.
+- **Process:**
+    - Sends probes with different headers, methods (GET, POST, PUT, etc.), and parameters.
+    - Analyzes responses for error messages, server information leaks, or unexpected behaviors that could indicate vulnerabilities.
+
+**4. Subdomain Enumeration:**
+
+- **Function:** Discovers all subdomains associated with your primary domain that might be running AEM.
+- **Process:**
+    - Leverages DNS queries, certificate transparency logs, and search engine results to identify subdomains.
+    - Cross-references results with known AEM patterns and runs the AEM detector on identified subdomains.
+
+**5. Directory Bruteforcing:**
+
+- **Function:** Attempts to access hidden or sensitive AEM directories not readily apparent through crawling.
+- **Process:**
+    - Uses wordlists of common AEM directory names and file paths.
+    - Sends requests to each potential path and analyzes responses for success or failure.
+    - Identifies unauthorized content or configuration files that could be exploited.
+
+**6. AEM Vulnerability Scanning:**
+
+- **Function:** Scans identified AEM instances for known vulnerabilities based on CVE databases, exploit research, and vendor advisories.
+- **Process:**
+    - Matches detected AEM versions with known vulnerabilities.
+    - Attempts to exploit vulnerabilities to confirm their presence and exploitability.
+    - Prioritizes vulnerabilities based on severity and potential impact.
+
+**7. Template-Based Scanner to Find 0days at Scale:**
+
+- **Function:** Detects potential zero-day vulnerabilities (unpatched, unknown) using pre-defined attack patterns.
+- **Process:**
+    - Employs templates for common AEM vulnerabilities, such as SQL injection or cross-site scripting.
+    - Automatically sends crafted probes to test for vulnerabilities based on these templates.
+    - Flags potential 0days for further investigation and prioritization.
+
+**Together, these components provide a comprehensive understanding of your AEM attack surface, enabling proactive vulnerability management and risk mitigation.**
+
+
+## Scan Inputs
+
+The scan mode may contain one or more of the following inputs:
+
+**URL:**
+
+The target URL to scan (e.g. https://example.com)
+
+**Domain:**
+
+The root domain to scan (e.g. test.com)
+
+**Wordlist:**
+
+The custom wordlist to be used during directory bruteforcing, if you need a few to get start with, try the following: 
+
+- [Assetnote](https://wordlists.assetnote.io/) 
+- [Seclists](https://github.com/danielmiessler/SecLists) 
+- [AEM Wordlist](https://github.com/ZephrFish/Wordlists/blob/master/AEM-Enum.txt)
+
+
+**User Agent:**
+
+The custom user-agent to be used during scanning, for an example:
+```bash
+Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36
+```
+
+**Template:**
+
+The template to be used during scanning which can help researchers run 0days or ndays at scale using our distributed scanner:
+```json
+{
+  "requests": {
+    "path": "/content/..;/crx/de/index.jsp",
+    "method": "GET",
+    "headers": [
+      {
+        "name": "Authorization",
+        "value": "Basic dGVzdDp0ZXN0"
+      }
+    ]
+  },
+  "responses": {
+    "matchers-condition": "and",
+    "matchers": [
+      {
+        "type": "word",
+        "words": ["CRXDE Lite"]
+      },
+      {
+        "type": "status",
+        "status": [200]
+      }
+    ]
+  }
+}
+```
+
+

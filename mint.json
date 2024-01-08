@@ -7,11 +7,12 @@
   },
   "favicon": "/favicon.png",
   "colors": {
-    "primary": "#ffffff",
-    "light": "#f6f6f6",
+    "primary": "#000000",
+    "light": "#f3f3f3",
     "dark": "#000000",
     "background": {
-      "dark": "#090014"
+      "dark": "#000000",
+      "light": "#f6f6f6"
     },
     "anchors": {
       "from": "#FF7F57",
@@ -38,7 +39,7 @@
     {
       "name": "Slack",
       "icon": "slack",
-      "url": "https://attaxa.com"
+      "url": "https://attaxa.slack.com"
     },
     {
       "name": "Community",
@@ -49,7 +50,7 @@
   "navigation": [
     {
       "group": "Get Started",
-      "pages": ["introduction", "quickstart", "development"]
+      "pages": ["introduction", "scanning", "template"]
     }
   ],
   "footerSocials": {

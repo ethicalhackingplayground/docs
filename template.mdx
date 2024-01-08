@@ -1,0 +1,69 @@
+---
+title: Template Rules
+description: "Learn how to create your own templates for scanning"
+---
+
+**Here is an example of a template that performs a path traversal to access the CRXDE Panel**
+
+```json
+{
+  "requests": {
+    "path": "/content/..;/crx/de/index.jsp",
+    "method": "GET"
+  },
+  "responses": {
+    "matchers-condition": "and",
+    "matchers": [
+      {
+        "type": "word",
+        "words": ["CRXDE Lite"]
+      },
+      {
+        "type": "status",
+        "status": [200]
+      }
+    ]
+  }
+}
+```
+
+## Requests
+<ParamField path="path" type="string" required>
+  The http path
+</ParamField>
+<ParamField path="method" type="string" required>
+  The http method
+</ParamField>
+<ResponseField name="headers" type="array" defaultOpen>
+  <Expandable title="properties">
+    <ResponseField name="name" type="string">
+      The header name
+    </ResponseField>
+    <ResponseField name="value" type="string">
+      The header value
+    </ResponseField>
+  </Expandable>
+</ResponseField>
+
+## Responses
+<ParamField path="matcher-condition" type="string" required>
+  The matcher condition: 
+  - **and** will make sure all matches are true for a valid finding
+  - **or** will make sure one or more matches are true for a valid finding
+</ParamField>
+<ResponseField name="matchers" type="array" defaultOpen>
+  <Expandable title="properties">
+    <ResponseField name="type: status" type="string">
+      <ResponseField name="status" type="number">
+      the status code to match
+      </ResponseField>
+    </ResponseField>
+    
+    <ResponseField name="type: word" type="string">
+      <ResponseField name="words" type="string">
+      the text to search for in the response body
+      </ResponseField>
+    </ResponseField>
+  </Expandable>
+</ResponseField>
+
