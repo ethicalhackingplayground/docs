@@ -40,11 +40,6 @@
       "name": "Slack",
       "icon": "slack",
       "url": "https://attaxa.slack.com"
-    },
-    {
-      "name": "Community",
-      "icon": "discord",
-      "url": "https://discord.gg/cQ6WNybd"
     }
   ],
   "navigation": [
