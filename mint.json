@@ -54,7 +54,7 @@
     },
     {
       "group": "Security Testing",
-      "pages": ["scanning", "template"]
+      "pages": ["vulnerability-scanning", "template-syntax"]
     }
   ],
   "footerSocials": {
