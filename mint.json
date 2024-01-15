@@ -7,7 +7,7 @@
   },
   "favicon": "/favicon.png",
   "colors": {
-    "primary": "#000000",
+    "primary": "#7d7d7d",
     "light": "#f3f3f3",
     "dark": "#000000",
     "background": {
@@ -22,14 +22,19 @@
   "topbarLinks": [
     {
       "name": "Support",
-      "url": "mailto:hi@mintlify.com"
+      "url": "mailto:blake@attaxa.com"
     }
   ],
   "topbarCtaButton": {
-    "name": "Dashboard",
-    "url": "https://dashboard.mintlify.com"
+    "name": "Sign In",
+    "url": "https://preview.attaxa.com"
   },
-  "tabs": [],
+  "tabs": [
+    {
+      "name": "API Reference",
+      "url": "api-reference"
+    }
+  ],
   "anchors": [
     {
       "name": "Documentation",
@@ -40,6 +45,11 @@
       "name": "Slack",
       "icon": "slack",
       "url": "https://attaxa.slack.com"
+    },
+    {
+      "name": "Discord",
+      "icon": "discord",
+      "url": "https://discord.gg/5P8bEUNM"
     }
   ],
   "navigation": [
@@ -50,10 +60,57 @@
     {
       "group": "Security Testing",
       "pages": ["vulnerability-scanning", "template-syntax"]
+    },
+    {
+      "group": "API Documentation",
+      "pages": ["api-reference/introduction"]
+    },
+    {
+      "group": "API",
+      "pages": ["api-reference/endpoint/get-healthy"]
+    },
+    {
+      "group": "Profile",
+      "pages": ["api-reference/endpoint/get-user"]
+    },
+    {
+      "group": "Scans",
+      "pages": [
+        "api-reference/endpoint/get-scans",
+        "api-reference/endpoint/post-new-scan",
+        "api-reference/endpoint/get-stats"
+      ]
+    },
+    {
+      "group": "Assets",
+      "pages": [
+        "api-reference/endpoint/get-aem-hosts",
+        "api-reference/endpoint/get-crawls",
+        "api-reference/endpoint/get-directories",
+        "api-reference/endpoint/get-hosts",
+        "api-reference/endpoint/get-reflections"
+      ]
+    },
+    {
+      "group": "Notifications",
+      "pages": ["api-reference/endpoint/get-notifications"]
+    },
+    {
+      "group": "Vulnerabilities",
+      "pages": ["api-reference/endpoint/get-issues"]
+    },
+    {
+      "group": "Platforms",
+      "pages": ["api-reference/endpoint/get-platforms"]
     }
   ],
   "footerSocials": {
     "twitter": "https://twitter.com/attaxapty",
     "linkedin": "https://www.linkedin.com/company/attaxa"
-  }
+  },
+  "api": {
+    "baseUrl": "https://example.com/api",
+    "auth": {}
+  },
+  "openapi": "https://shield.attaxa.com/api/doc"
 }

@@ -1,0 +1,38 @@
+---
+title: 'Introduction'
+description: 'Attaxas API'
+---
+
+<Note>
+Documentation for additional API routes is currently under development.
+</Note>
+
+## Welcome
+
+Welcome to our API, your gateway to powerful reconnaissance data, comprehensive scans, and insightful target analytics. Our API is designed to provide developers, security analysts, and IT professionals with the tools they need to view, analyze, and act upon the wealth of information available within their digital environments.
+
+By leveraging our API, you can:
+
+- **Access Recon Data**: Obtain detailed information about your digital assets, including domain names, IP addresses, and associated metadata. This data is crucial for understanding your attack surface and preparing for potential threats.
+  
+- **Initiate Scans**: Perform a variety of scans ranging from vulnerability assessments to configuration audits. Our API supports multiple scan modes, ensuring you can tailor your security checks to your specific needs.
+  
+- **Analyze Targets**: Dive deep into analytics related to your targets. Get insights into their security posture, historical data, and patterns that may indicate areas of concern or opportunities for improvement.
+
+Our API is not just a tool; it's a companion for your security operations that empowers you to make informed decisions quickly and efficiently. Start exploring the possibilities today and enhance the way you interact with your recon data, scans, and target analytics.
+
+## Authentication
+
+All API endpoints are authenticated using the `appSession` JWT token that is calculated for you when you sign in.
+
+```http
+Cookie: appSession=<JWT Token>
+```
+
+This is an example curl command:
+
+```bash
+curl --request GET \
+  --url https://shield.attaxa.com/api/api/healthy \
+  --header "Cookie: appSession=<JWT TOKEN>
+``` 
