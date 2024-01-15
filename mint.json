@@ -77,9 +77,12 @@
       "group": "Scans",
       "pages": [
         "api-reference/endpoint/get-scans",
-        "api-reference/endpoint/post-new-scan",
-        "api-reference/endpoint/get-stats"
+        "api-reference/endpoint/post-new-scan"
       ]
+    },
+    {
+      "group": "Statistics",
+      "pages": ["api-reference/endpoint/get-stats"]
     },
     {
       "group": "Assets",
@@ -109,7 +112,7 @@
     "linkedin": "https://www.linkedin.com/company/attaxa"
   },
   "api": {
-    "baseUrl": "https://example.com/api",
+    "baseUrl": "https://example.com",
     "auth": {}
   },
   "openapi": "https://shield.attaxa.com/api/doc"
