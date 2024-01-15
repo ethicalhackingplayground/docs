@@ -112,7 +112,7 @@
     "linkedin": "https://www.linkedin.com/company/attaxa"
   },
   "api": {
-    "baseUrl": "https://example.com",
+    "baseUrl": "https://shield.attaxa.com",
     "auth": {}
   },
   "openapi": "https://shield.attaxa.com/api/doc"
