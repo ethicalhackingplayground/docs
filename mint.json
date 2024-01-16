@@ -71,7 +71,7 @@
     },
     {
       "group": "Profile",
-      "pages": ["api-reference/endpoint/get-current-user.mdx"]
+      "pages": ["api-reference/endpoint/get-current-user"]
     },
     {
       "group": "Scans",
