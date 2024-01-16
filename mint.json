@@ -95,12 +95,11 @@
       ]
     },
     {
-      "group": "Wayback Machine",
-      "pages": ["api-reference/endpoint/get-wayback"]
-    },
-    {
-      "group": "Virus Total",
-      "pages": ["api-reference/endpoint/get-virustotal"]
+      "group": "Osint",
+      "pages": [
+        "api-reference/endpoint/get-wayback",
+        "api-reference/endpoint/get-virustotal"
+      ]
     },
     {
       "group": "Notifications",
