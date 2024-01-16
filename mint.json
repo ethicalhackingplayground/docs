@@ -95,6 +95,14 @@
       ]
     },
     {
+      "group": "Wayback Machine",
+      "pages": ["api-reference/endpoint/get-wayback"]
+    },
+    {
+      "group": "Virus Total",
+      "pages": ["api-reference/endpoint/get-virustotal"]
+    },
+    {
       "group": "Notifications",
       "pages": ["api-reference/endpoint/get-notifications"]
     },
